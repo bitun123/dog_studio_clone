@@ -8,23 +8,35 @@ import {
   useAnimations,
 } from "@react-three/drei";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+
 function Dog() {
+
+gsap.registerPlugin(useGSAP)
+gsap.registerPlugin(ScrollTrigger)
+
+
+
+
   const model = useGLTF("/models/dog.drc.glb");
   useThree(({ camera, scene, gl }) => {
     camera.position.z = 0.55;
     gl.toneMapping = THREE.ReinhardToneMapping;
     gl.outputColorSpace = THREE.SRGBColorSpace;
   });
-const dogRef = useRef();
-useFrame(({ mouse }) => {
-  if (!dogRef.current) return;
+// const dogRef = useRef();
+// useFrame(({ mouse }) => {
+//   if (!dogRef.current) return;
 
-  dogRef.current.rotation.y = THREE.MathUtils.lerp(
-    dogRef.current.rotation.y,
-    Math.PI / 4.9 + mouse.x * 0.25,
-    0.05
-  );
-});
+//   dogRef.current.rotation.y = THREE.MathUtils.lerp(
+//     dogRef.current.rotation.y,
+//     Math.PI / 4.9 + mouse.x * 0.25,
+//     0.05
+//   );
+// });
 
 
   const { actions } = useAnimations(model.animations, model.scene);
@@ -33,6 +45,8 @@ useFrame(({ mouse }) => {
     actions["Take 001"].play();
   }, [actions]);
 
+
+  
   const [normalMap, sampleMatCap,branches_diffuse,branches_normals] = useTexture([
     "/dog_normals.jpg",
     "/matcap/mat-2.png",
@@ -73,13 +87,52 @@ useFrame(({ mouse }) => {
     }
   });
 
+  const dogModel = useRef(model);
+
+
+useGSAP(()=>{
+const tl = gsap.timeline({
+  scrollTrigger:{
+    trigger:"#section-1",
+    endTrigger:"#section-3",
+    start:"top top",
+    end:"bottom bottom",
+    markers:true,
+    scrub:true
+  }
+})
+
+tl.to(dogModel.current.scene.position,{
+  z:'-=0.75',
+  y:'+=0.1',
+})
+
+.to(dogModel.current.scene.rotation,{
+  x:`+=${Math.PI/13}`
+})
+
+.to(dogModel.current.scene.rotation,{
+  y:`-=${Math.PI}`,
+
+},"third")
+.to(dogModel.current.scene.position,{
+  x:"-=0.5",
+  z:'+=0.55',
+  y:"-=0.03"
+},"third")
+
+},[])
+
+
+
+
   return (
     <>
       <primitive
-        ref={dogRef}
+        // ref={dogRef}
         object={model.scene}
-        position={[0.2, -0.55, 0]}
-        rotation={[0, Math.PI / 4.9, 0]}
+        position={[0.2, -0.55, 0.12]}
+        rotation={[0, Math.PI / 6, 0]}
       />
       <directionalLight
         position={[0, -0.5, 5]}
