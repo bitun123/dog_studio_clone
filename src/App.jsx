@@ -7,23 +7,17 @@ import "./App.css";
 function App() {
   return (
     <div>
-      <main>
-        <Canvas
-          style={{
-            width: "100vw",
-            height: "100vh",
-            position: "fixed",
-            top: "0",
-            left: "0",
-            zIndex: "1",
-            backgroundImage: "url(/bg1.png)",
-            backgroundPosition: "center",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <Dog />
-        </Canvas>
+      <main >
+<Canvas 
+  id='canvas-elem' 
+  style={{ height: "100vh", width: "100vw", position: "fixed", top: 0, left: 0, zIndex: 1 }}
+  onCreated={({ scene }) => {
+    // This sets the background of the 3D world itself
+    // Note: You may need a TextureLoader for a flat image
+  }}
+>
+  <Dog />
+</Canvas>
         <section id="section-1">
           <nav>
             <div className="nav-elem">
@@ -72,15 +66,40 @@ function App() {
                 creative studio at the intersection <br />
                 of art, design and technology.
               </p>
-              <p>
-                Our goal is to deliver amazing experiences that make <br />
-                people talk, and build strategic value for brands, tech, <br />
-                entertainment, arts & culture.
-              </p>
+     
             </div>
           </div>
+              <div className="first-line"></div>
+         <div className="second-line"></div>
         </section>
-        <section id="section-2"></section>
+        <section id="section-2">
+<div className="titles">
+  <div className="title">
+    <small>2020 - ONGOING</small>
+    <h1>Tomorrowland</h1>
+  </div>
+  <div className="title">
+    <small>2020 - ONGOING</small>
+    <h1>Navy Pier</h1>
+  </div>
+ <div className="title">
+    <small>2020 - ONGOING</small>
+    <h1>MSI Chicago</h1>
+  </div>
+ <div className="title">
+    <small>2020 - ONGOING</small>
+    <h1>This Was Louise’s Phone</h1>
+  </div>
+ <div className="title">
+    <small>2020 - ONGOING</small>
+    <h1>KIKK Festival 2018</h1>
+  </div>
+
+
+</div>
+
+
+        </section>
         <section id="section-3"></section>
       </main>
     </div>

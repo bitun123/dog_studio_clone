@@ -7,6 +7,7 @@
   font-family: heebo;
   src: url(../assets/Heebo-Regular.woff2);
 }
+
 @font-face {
   font-family: heebo2;
   src: url(../assets/Heebo-Light.woff2);
@@ -15,6 +16,11 @@
 @font-face {
   font-family: GT2;
   src: url(../assets/GTSectraDisplay-Regular.woff2);
+}
+
+@font-face {
+  font-family: heebothin;
+  src: url(../assets/Heebo-Thin.woff2);
 }
 
 * {
@@ -36,6 +42,9 @@ main {
   position: relative;
 }
 
+
+
+
 section {
   min-height: 100vh;
 
@@ -43,15 +52,29 @@ section {
   z-index: 2;
 }
 
+#canvas-elem::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url(/bg1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.3s linear;
+}
+
 #section-1 {
 
 
-   nav{
+  nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0.7rem;
-    padding-top: 3.2rem;
+    padding-top: 3rem;
 
     .nav-elem {
       color: white;
@@ -72,8 +95,8 @@ section {
 
   .middle {
     display: flex;
-    gap: 7rem;
-    
+    gap: 5rem;
+
 
     .left,
     .right {
@@ -107,18 +130,70 @@ section {
     }
 
     .right {
-      p{
+      p {
         color: white;
         font-family: "heebo2";
         font-size: 1.4rem;
         line-height: 1.5;
         font-weight: 100;
       }
-        .right:nth-child(2){
-          color: red;
-        }
     }
   }
 
+  .first-line {
+    width: 40rem;
+    height: 0.03rem;
+    background-color: rgba(255, 0, 0, 0.453);
+    position: absolute;
+    left: -7rem;
+    transform: rotate(45deg) translate(-10rem, -14rem);
+  }
 
+  .second-line {
+    width: 12rem;
+    height: 0.03rem;
+    background-color: rgba(255, 0, 0, 0.404);
+    position: absolute;
+    top: 15rem;
+    right: 3rem;
+    transform: rotate(-35deg) translate(-10rem, -10rem);
+  }
+}
+
+#section-2 {
+  .titles {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 3rem;
+    padding-block: 10rem;
+
+    .title {
+      display: flex;
+      gap: 4rem;
+      align-items: start;
+      padding-block: 2rem;
+      transition: all 0.3s linear;
+      opacity: 0.3;
+      cursor: pointer;
+      color: white;
+
+      h1 {
+        font-size: 6rem;
+
+        font-weight: 100;
+        font-family: "heebothin", Helvetica, Arial, sans-serif;
+        line-height: 1;
+
+      }
+
+      small {
+
+        margin-top: 0.6rem;
+      }
+    }
+
+    .title:hover {
+      opacity: 0.8;
+    }
+  }
 }
