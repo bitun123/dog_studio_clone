@@ -63,8 +63,10 @@ section {
   background-image: url(/bg1.png);
   background-repeat: no-repeat;
   background-size: cover;
-  transition: all 0.3s linear;
+  transition: all 0.4s linear;
 }
+
+
 
 #section-1 {
 
@@ -178,7 +180,7 @@ section {
       color: white;
 
       h1 {
-        font-size: 6rem;
+        font-size: 5rem;
 
         font-weight: 100;
         font-family: "heebothin", Helvetica, Arial, sans-serif;
@@ -197,3 +199,36 @@ section {
     }
   }
 }
+
+main:has(#section-2 .title:hover) #canvas-elem::after {
+  opacity: 0;
+}
+
+.images {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s linear;
+  }
+
+}
+
+
+main:has(#section-2 .title[img-title="tomorrow"]:hover) #tomorrow{
+  opacity: 1;
+  background-color: #081126;
+} 
+main:has(#section-2 .title[img-title="navy"]:hover) #navy{
+  opacity: 1;
+} 

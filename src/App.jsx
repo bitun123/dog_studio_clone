@@ -1,23 +1,46 @@
 import React from "react";
 import Dog from "./components/Dog";
 import { Canvas } from "@react-three/fiber";
-
+import tomorrow from "../public/bgimg/bg7.png";
+import navy from "../public/bgimg/tomorrow.png";
+import msi from "../public/bgimg/bg1.png";
+import phone from "../public/bgimg/bg4.png";
+import kikk from "../public/bgimg/bg5.png";
+import kennedy from "../public/bgimg/bg7.png";
+import opera from "../public/bgimg/bg2.png";
 import "./App.css";
 
 function App() {
   return (
     <div>
-      <main >
-<Canvas 
-  id='canvas-elem' 
-  style={{ height: "100vh", width: "100vw", position: "fixed", top: 0, left: 0, zIndex: 1 }}
-  onCreated={({ scene }) => {
-    // This sets the background of the 3D world itself
-    // Note: You may need a TextureLoader for a flat image
-  }}
->
-  <Dog />
-</Canvas>
+      <main>
+        <div className="images">
+          <img id="tomorrow" src={tomorrow} alt="" />
+          <img id="navy" src={navy} alt="" />
+          <img id="msi" src={msi} alt="" />
+          <img id="phone" src={phone} alt="" />
+          <img id="kikk" src={kikk} alt="" />
+          <img id="kennedy" src={kennedy} alt="" />
+          <img id="opera" src={opera} alt="" />
+        </div>
+
+        <Canvas
+          id="canvas-elem"
+          style={{
+            height: "100vh",
+            width: "100vw",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            zIndex: 1,
+          }}
+          onCreated={({ scene }) => {
+            // This sets the background of the 3D world itself
+            // Note: You may need a TextureLoader for a flat image
+          }}
+        >
+          <Dog />
+        </Canvas>
         <section id="section-1">
           <nav>
             <div className="nav-elem">
@@ -66,39 +89,42 @@ function App() {
                 creative studio at the intersection <br />
                 of art, design and technology.
               </p>
-     
             </div>
           </div>
-              <div className="first-line"></div>
-         <div className="second-line"></div>
+          <div className="first-line"></div>
+          <div className="second-line"></div>
         </section>
         <section id="section-2">
-<div className="titles">
-  <div className="title">
-    <small>2020 - ONGOING</small>
-    <h1>Tomorrowland</h1>
-  </div>
-  <div className="title">
-    <small>2020 - ONGOING</small>
-    <h1>Navy Pier</h1>
-  </div>
- <div className="title">
-    <small>2020 - ONGOING</small>
-    <h1>MSI Chicago</h1>
-  </div>
- <div className="title">
-    <small>2020 - ONGOING</small>
-    <h1>This Was Louise’s Phone</h1>
-  </div>
- <div className="title">
-    <small>2020 - ONGOING</small>
-    <h1>KIKK Festival 2018</h1>
-  </div>
-
-
-</div>
-
-
+          <div className="titles">
+            <div className="title" img-title="tomorrow">
+              <small>2020 - ONGOING</small>
+              <h1>Tomorrowland</h1>
+            </div>
+            <div className="title" img-title="navy">
+              <small>2020 - ONGOING</small>
+              <h1>Navy Pier</h1>
+            </div>
+            <div className="title" img-title="msi">
+              <small>2020 - ONGOING</small>
+              <h1>MSI Chicago</h1>
+            </div>
+            <div className="title" img-title="phone">
+              <small>2020 - ONGOING</small>
+              <h1>This Was Louise’s Phone</h1>
+            </div>
+            <div className="title" img-title="kikk">
+              <small>2020 - ONGOING</small>
+              <h1>KIKK Festival 2018</h1>
+            </div>
+            <div className="title" img-title="kennedy">
+              <small>2020 - ONGOING</small>
+              <h1>The Kennedy Center</h1>
+            </div>
+            <div className="title" img-title="opera">
+              <small>2020 - ONGOING</small>
+              <h1>Royal Opera Of Wallonia</h1>
+            </div>
+          </div>
         </section>
         <section id="section-3"></section>
       </main>
