@@ -4,10 +4,10 @@ import { Canvas } from "@react-three/fiber";
 import tomorrow from "../public/bgimg/bg7.png";
 import navy from "../public/bgimg/tomorrow.png";
 import msi from "../public/bgimg/bg1.png";
-import phone from "../public/bgimg/bg4.png";
-import kikk from "../public/bgimg/bg5.png";
-import kennedy from "../public/bgimg/bg7.png";
-import opera from "../public/bgimg/bg2.png";
+import phone from "../public/bgimg/bg2.png";
+import kikk from "../public/bgimg/bg4.png";
+import kennedy from "../public/bgimg/bg5.png";
+import opera from "../public/bgimg/bg6.png";
 import "./App.css";
 
 function App() {
@@ -126,7 +126,27 @@ function App() {
             </div>
           </div>
         </section>
-        <section id="section-3"></section>
+        <section id="section-3">
+          <div className="top">
+            <div className="left">
+              <h3>
+                Lorem ipsum dolor <br /> sit amet consectetur <br /> adipisicing
+                elit. <br /> Aspernatur, asperiores <br /> dicta excepturi{" "}
+                <br />
+              </h3>
+            </div>
+          </div>
+      
+        </section>
+        <div id="section-4">
+              <div className="bottom">
+            <div className="left"></div>
+            <div className="right">
+             <p>Lorem ipsum dolor  <br /> sit amet consectetur <br /> adipisicing elit. Assumenda <br /> saepe qui velit deserunt <br /> rerum quia voluptas, <br /> a dignissimos! Dicta.</p>
+             <p>Lorem ipsum dolor  <br /> sit amet consectetur <br /> adipisicing elit. Assumenda <br /> saepe qui velit deserunt <br /> rerum quia voluptas, <br /> a dignissimos! Dicta.</p>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );

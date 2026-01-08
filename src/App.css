@@ -167,7 +167,7 @@ section {
     display: flex;
     flex-direction: column;
     padding-inline: 3rem;
-    padding-block: 10rem;
+    margin-block: 10rem;
 
     .title {
       display: flex;
@@ -225,10 +225,132 @@ main:has(#section-2 .title:hover) #canvas-elem::after {
 }
 
 
-main:has(#section-2 .title[img-title="tomorrow"]:hover) #tomorrow{
+main:has(#section-2 .title[img-title="tomorrow"]:hover) #tomorrow {
   opacity: 1;
   background-color: #081126;
-} 
-main:has(#section-2 .title[img-title="navy"]:hover) #navy{
+}
+
+main:has(#section-2 .title[img-title="navy"]:hover) #navy {
   opacity: 1;
-} 
+  background-color: #081126;
+}
+
+main:has(#section-2 .title[img-title="msi"]:hover) #msi {
+  opacity: 1;
+  background-color: #021033;
+}
+
+main:has(#section-2 .title[img-title="phone"]:hover) #phone {
+  opacity: 1;
+  background-color: #04192B;
+}
+
+main:has(#section-2 .title[img-title="kikk"]:hover) #kikk {
+  opacity: 1;
+  background-color: #03147D;
+}
+
+main:has(#section-2 .title[img-title="kennedy"]:hover) #kennedy {
+  opacity: 1;
+  background-color: #0D2835;
+}
+
+main:has(#section-2 .title[img-title="opera"]:hover) #opera {
+  opacity: 1;
+  background-color: #680202;
+}
+
+#section-3 {
+  padding-block: 10rem;
+  padding-inline: 10rem;
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  min-height: initial;
+
+  .top,
+  .bottom {
+    display: flex;
+    gap: 10rem;
+    width: 100%;
+
+  }
+
+  .top .left {
+    padding-left: 5rem;
+
+    h3{
+      font-size: 2.5rem;
+      font-weight: 600;
+      font-family: "gt2";
+      color: rgb(255, 255, 255);
+    }
+  }
+
+  .left,
+  .right {
+    width: 50%;
+  }
+
+  .bottom .right {
+    display: flex;
+    gap: 2rem;
+
+    p {
+      opacity: 0.5;
+      font-weight: 200;
+      font-size: 1rem;
+      line-height: 2rem;
+      font-family: "heebo2";
+      color: rgba(255, 255, 255, 0.521);
+    }
+  }
+
+
+}
+
+#section-4 {
+
+  .top,
+  .bottom {
+    display: flex;
+    gap: 10rem;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+
+  }
+
+  .top .left {
+    padding-left: 5rem;
+
+    h3 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      opacity: 1;
+      font-family: "gt2";
+      color: white;
+    }
+  }
+
+  .left,
+  .right {
+    width: 50%;
+  }
+
+  .bottom .right {
+    display: flex;
+    gap: 2rem;
+
+    p {
+      opacity: 0.5;
+      font-weight: 200;
+      font-size: 1rem;
+      line-height: 2rem;
+      font-family: "heebo2";
+      color: rgba(255, 255, 255, 0.521);
+    }
+  }
+
+}
